@@ -29,4 +29,6 @@ class Woman(Human):
             name = names[randint(0, len(names) - 1)]
             print('Имя ребёнка: ' + name)
             print('Пол ребёнка: ' + gender)
-        return Human(name)
+            return Human(name)
+        else:
+            print('Детей не будет!!!')
