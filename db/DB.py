@@ -23,9 +23,9 @@ class DB:
             self.connect = psycopg2.connect(
                 database="vm31-db",
                 user="vm31-user",
-                password="comp61",
+                password="p455w0rd",
                 host="127.0.0.1",
-                port="5433"
+                port="5432"
             )
             self.cursor = self.connect.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
             print('Connected!!!!!!')
@@ -46,6 +46,14 @@ class DB:
         query = "SELECT id, name, result, date_time FROM test_results ORDER BY date_time"
         self.cursor.execute(query)
         return self.cursor.fetchall()
+
+    @toDict
+    def getTestResultsByTimeInterval(self, time):
+        query = '''SELECT id, name, result, date_time FROM test_results ORDER BY date_time
+            WHERE date_time = %time'''
+        self.cursor.execute(query)
+        return self.cursor.fetchall()
+
 
     def insertTestResult(self, name, result):
         self.cursor.execute(
