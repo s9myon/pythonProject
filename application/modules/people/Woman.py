@@ -1,5 +1,6 @@
-from people.Human import Human
 from random import randint
+
+from application.modules.people.Human import Human
 
 
 class Woman(Human):

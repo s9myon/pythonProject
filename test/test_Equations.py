@@ -1,5 +1,6 @@
 import pytest
-from Equations import Equations
+
+from application.modules.Equations import Equations
 
 
 @pytest.mark.parametrize(

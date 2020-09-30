@@ -1,6 +1,6 @@
 import xlsxwriter
 
-from db.DB import DB
+from application.modules.db.DB import DB
 
 db = DB()
 tests = db.getAllTestResults()
@@ -45,16 +45,16 @@ worksheet.write('G2', '=SUM(D:D)', cellFail)
 # worksheet.insert_chart('H7', chart)
 chart = workbook.add_chart(dict(type='doughnut'))
 
-chart.add_series({
-    'name': 'Результаты тестов',
-    'categories': '=Sheet1!$F$1:$G$1',
-    'values':     '=Sheet1!$F$2:$G$2',
-    'data_labels': {'percentage': True},
-    'points': [
-        {'fill': {'color': 'green'}},
-        {'fill': {'color': 'red'}},
-    ],
-})
+chart.add_series(dict(
+    name='Результаты тестов',
+    categories='=Sheet1!$F$1:$G$1',
+    values='=Sheet1!$F$2:$G$2',
+    data_labels=dict(percentage=True),
+    points=[
+        dict(fill=dict(color='green')),
+        dict(fill=dict(color='red'))
+    ]
+))
 # Set a 3D style.
 chart.set_style(26)
 

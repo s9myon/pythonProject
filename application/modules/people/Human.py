@@ -1,5 +1,5 @@
-from random import random
 from math import ceil
+from random import random
 
 
 class Human:

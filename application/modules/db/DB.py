@@ -18,14 +18,14 @@ def toDict(func):
 
 
 class DB:
-    def __init__(self):
+    def __init__(self, db):
         try:
             self.connect = psycopg2.connect(
-                database="vm31-db",
-                user="vm31-user",
-                password="p455w0rd",
-                host="127.0.0.1",
-                port="5432"
+                database=db['NAME'],
+                user=db['USER'],
+                password=db['PASSWORD'],
+                host=db['HOST'],
+                port=db['PORT']
             )
             self.cursor = self.connect.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
             print('Connected!!!!!!')
