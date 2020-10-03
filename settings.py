@@ -2,9 +2,9 @@ SETTINGS = {
     'DB': {
         'NAME': 'vm31-db',
         'USER': 'vm31-user',
-        'PASSWORD': "comp61",
+        'PASSWORD': "p455w0rd",
         'HOST': "127.0.0.1",
-        'PORT': "5433"
+        'PORT': "5432"
     },
     'MEDIATOR': {
         'EVENTS': {

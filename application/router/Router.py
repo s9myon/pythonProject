@@ -1,5 +1,5 @@
 class Router:
-    def __init__(self, app, web):
+    def __init__(self, app, web, mediator):
         self.web = web
         routes = [
             ('GET', '/api/test', self.testHandler),

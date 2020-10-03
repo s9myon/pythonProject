@@ -1,1 +1,1 @@
-console.log("АРМЕНИЯ - СИЛА!!!");
+console.log("Hello World!!!")

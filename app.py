@@ -1,7 +1,6 @@
 from aiohttp import web
-
 from application.modules.db.DB import DB
-from application.modules.mediator import Mediator
+from application.modules.mediator.Mediator import Mediator
 from application.router.Router import Router
 from settings import SETTINGS
 
@@ -10,10 +9,11 @@ from settings import SETTINGS
 # audio ?
 # pirates
 db = DB(SETTINGS['DB'])
+print(Mediator)
 mediator = Mediator(SETTINGS['MEDIATOR']['EVENTS'])
 
 app = web.Application()
-Router(app, web, Mediator)
+Router(app, web, mediator)
 
 web.run_app(app)
 # ДЗ
